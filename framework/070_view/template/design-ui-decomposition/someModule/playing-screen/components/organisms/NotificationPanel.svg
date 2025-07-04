@@ -1,0 +1,30 @@
+<svg viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- NotificationPanel 组件 -->
+    <rect x="0" y="0" width="250" height="200" fill="none" stroke="#CCC" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- 升级指示器 (3个箭头) -->
+    <g transform="translate(10, 10)">
+        <path d="M 24 0 L 48 32 L 35 32 L 35 64 L 13 64 L 13 32 L 0 32 Z" fill="#4CAF50"/>
+    </g>
+    <g transform="translate(90, 10)">
+        <path d="M 24 0 L 48 32 L 35 32 L 35 64 L 13 64 L 13 32 L 0 32 Z" fill="#4CAF50"/>
+    </g>
+    <g transform="translate(170, 10)">
+        <path d="M 24 0 L 48 32 L 35 32 L 35 64 L 13 64 L 13 32 L 0 32 Z" fill="#4CAF50"/>
+    </g>
+    
+    <!-- 宝箱指示器 (2个宝箱) -->
+    <g transform="translate(50, 120)">
+        <rect width="64" height="48" rx="8" fill="#FFC107"/>
+        <rect x="8" y="-5" width="48" height="13" rx="3" fill="#DAA520"/>
+        <rect x="29" y="16" width="6" height="13" rx="2" fill="#DAA520"/>
+    </g>
+    <g transform="translate(146, 120)">
+        <rect width="64" height="48" rx="8" fill="#FFC107"/>
+        <rect x="8" y="-5" width="48" height="13" rx="3" fill="#DAA520"/>
+        <rect x="29" y="16" width="6" height="13" rx="2" fill="#DAA520"/>
+    </g>
+    
+    <!-- 标注 -->
+    <text x="125" y="-10" font-size="12" text-anchor="middle" fill="#666">NotificationPanel 组件</text>
+</svg>

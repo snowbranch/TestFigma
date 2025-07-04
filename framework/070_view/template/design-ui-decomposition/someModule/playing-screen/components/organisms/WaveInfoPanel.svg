@@ -1,0 +1,13 @@
+<svg viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- WaveInfoPanel 组件 -->
+    <rect x="0" y="0" width="250" height="120" fill="none" stroke="#CCC" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- 波次文本 -->
+    <text x="125" y="40" font-size="38" text-anchor="middle" fill="#555" font-weight="bold">WAVE 99</text>
+    
+    <!-- 倒计时文本 -->
+    <text x="125" y="90" font-size="38" text-anchor="middle" fill="#777">77</text>
+    
+    <!-- 标注 -->
+    <text x="125" y="-10" font-size="12" text-anchor="middle" fill="#666">WaveInfoPanel 组件</text>
+</svg>

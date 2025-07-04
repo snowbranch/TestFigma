@@ -1,0 +1,14 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- BattleScene 组件 -->
+    <rect x="0" y="0" width="600" height="400" fill="#F0F0F0" stroke="#888" stroke-width="2"/>
+    
+    <!-- 3D场景占位符 -->
+    <rect x="50" y="50" width="500" height="300" fill="#E0E0E0" stroke="#666" stroke-width="1"/>
+    
+    <!-- 中央文本 -->
+    <text x="300" y="200" font-size="48" text-anchor="middle" fill="#555">战斗场景</text>
+    <text x="300" y="240" font-size="16" text-anchor="middle" fill="#888">(3D ViewportFrame)</text>
+    
+    <!-- 标注 -->
+    <text x="300" y="-10" font-size="12" text-anchor="middle" fill="#666">BattleScene 组件</text>
+</svg>

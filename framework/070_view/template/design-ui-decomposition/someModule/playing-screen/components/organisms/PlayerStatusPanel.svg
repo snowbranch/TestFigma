@@ -1,0 +1,31 @@
+<svg viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+    <!-- PlayerStatusPanel 组件 -->
+    <rect x="0" y="0" width="350" height="350" fill="none" stroke="#CCC" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- HP条 -->
+    <rect x="10" y="10" width="320" height="48" rx="8" fill="#FFF" stroke="#888" stroke-width="3"/>
+    <rect x="13" y="13" width="224" height="42" rx="5" fill="#E53935"/>
+    <text x="170" y="42" font-size="29" fill="white" text-anchor="middle" font-weight="bold">10/14</text>
+    
+    <!-- LV条 -->
+    <rect x="10" y="74" width="320" height="48" rx="8" fill="#FFF" stroke="#888" stroke-width="3"/>
+    <rect x="13" y="77" width="288" height="42" rx="5" fill="#4CAF50"/>
+    <text x="322" y="107" font-size="29" fill="#333" text-anchor="end" font-weight="bold">LV 4</text>
+    
+    <!-- 金币 -->
+    <g transform="translate(10, 170)">
+        <circle cx="24" cy="24" r="24" fill="#FFD700"/>
+        <text x="24" y="35" font-size="32" fill="white" text-anchor="middle" font-weight="bold">G</text>
+        <text x="72" y="35" font-size="35" fill="#333" font-weight="bold">9999</text>
+    </g>
+    
+    <!-- 材料包 -->
+    <g transform="translate(10, 250)">
+        <circle cx="24" cy="24" r="24" fill="#8BC34A"/>
+        <text x="24" y="35" font-size="32" fill="white" text-anchor="middle" font-weight="bold">P</text>
+        <text x="72" y="35" font-size="35" fill="#333" font-weight="bold">9999</text>
+    </g>
+    
+    <!-- 标注 -->
+    <text x="175" y="-10" font-size="12" text-anchor="middle" fill="#666">PlayerStatusPanel 组件</text>
+</svg>
