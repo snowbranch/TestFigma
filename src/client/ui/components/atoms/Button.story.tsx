@@ -119,7 +119,7 @@ export const LongText = hoarcekat(() => {
     );
 });
 
-export = {
+export default {
     Default,
     Sizes,
     Colors,

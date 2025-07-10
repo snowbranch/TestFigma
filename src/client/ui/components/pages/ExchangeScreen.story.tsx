@@ -279,7 +279,7 @@ export const Lifecycle = hoarcekat(() => {
                     TextSize={14}
                     Font={Enum.Font.GothamMedium}
                     Event={{
-                        MouseButton1Click: () => setShowScreen(\!showScreen)
+                        MouseButton1Click: () => setShowScreen(!showScreen)
                     }}
                 >
                     <uicorner CornerRadius={new UDim(0, 6)} />
@@ -308,7 +308,7 @@ export const Lifecycle = hoarcekat(() => {
 
 // 响应式设计演示
 export const ResponsiveDesign = hoarcekat(() => {
-    const [screenSize, setScreenSize] = useState<"mobile"  < /dev/null |  "tablet" | "desktop">("desktop");
+    const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">("desktop");
     
     return (
         <frame
@@ -398,7 +398,7 @@ export const ResponsiveDesign = hoarcekat(() => {
     );
 });
 
-export = {
+export default {
     Default,
     InGameUI,
     MultipleInstances,

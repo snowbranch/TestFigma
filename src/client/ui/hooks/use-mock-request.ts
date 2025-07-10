@@ -87,15 +87,15 @@ const mockApiHandler = async (endpoint: string, options?: any): Promise<any> => 
     
     // 检查是否是错误情况
     if (mockErrors[endpoint as keyof typeof mockErrors]) {
-        const error = mockErrors[endpoint as keyof typeof mockErrors];
-        print(`[MockAPI] ${endpoint} -> Error:`, error);
-        throw error;
+        const mockError = mockErrors[endpoint as keyof typeof mockErrors];
+        print(`[MockAPI] ${endpoint} -> Error:`, mockError);
+        throw mockError;
     }
     
     // 默认成功响应
     const defaultResponse = {
         code: 0,
-        data: null,
+        data: undefined,
         message: "操作成功"
     };
     
@@ -139,8 +139,8 @@ export function useMockRequest() {
         addMockResponse: (endpoint: string, response: any) => {
             (mockResponses as any)[endpoint] = response;
         },
-        addMockError: (endpoint: string, error: any) => {
-            (mockErrors as any)[endpoint] = error;
+        addMockError: (endpoint: string, mockError: any) => {
+            (mockErrors as any)[endpoint] = mockError;
         }
     };
 }

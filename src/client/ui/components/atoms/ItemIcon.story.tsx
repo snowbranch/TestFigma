@@ -196,7 +196,7 @@ export const ItemGrid = hoarcekat(() => {
     );
 });
 
-export = {
+export default {
     Default,
     Sizes,
     BorderColors,

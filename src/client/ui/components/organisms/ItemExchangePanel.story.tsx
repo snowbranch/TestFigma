@@ -61,7 +61,7 @@ export const Interactive = hoarcekat(() => {
                 TextSize={14}
                 Font={Enum.Font.GothamMedium}
                 Event={{
-                    MouseButton1Click: () => setIsVisible(\!isVisible)
+                    MouseButton1Click: () => setIsVisible(!isVisible)
                 }}
             >
                 <uicorner CornerRadius={new UDim(0, 8)} />
@@ -81,7 +81,7 @@ export const Interactive = hoarcekat(() => {
 
 // 不同状态的面板演示
 export const States = hoarcekat(() => {
-    const [currentState, setCurrentState] = useState<"closed"  < /dev/null |  "open" | "processing">("closed");
+    const [currentState, setCurrentState] = useState<"closed" | "open" | "processing">("closed");
     
     const handleExchange = () => {
         setCurrentState("processing");
@@ -286,7 +286,7 @@ export const ErrorHandling = hoarcekat(() => {
     );
 });
 
-export = {
+export default {
     Default,
     Hidden,
     Interactive,

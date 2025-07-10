@@ -119,7 +119,7 @@ export const ManyItems = hoarcekat(() => {
     const items: ItemData[] = [];
     for (let i = 1; i <= 10; i++) {
         items.push({
-            id: i.toString(),
+            id: tostring(i),
             imageId: "rbxasset://textures/ui/GuiImagePlaceholder.png",
             name: `物品${i}`
         });
@@ -174,7 +174,7 @@ export const InventoryDisplay = hoarcekat(() => {
     );
 });
 
-export = {
+export default {
     Default,
     SingleItem,
     MultipleItems,
