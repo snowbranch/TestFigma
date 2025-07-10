@@ -28,7 +28,7 @@ export function ExchangeScreen() {
         <imagelabel
             Size={new UDim2(0, 400, 0, 300)}
             Position={new UDim2(0.5, -200, 0.5, -150)}
-            Image="rbxasset://textures/ui/GuiImagePlaceholder.png" // 你可以替换为自己的背景图片
+            Image="rbxasset://textures/ui/Scroll/scroll-middle.png" // 使用 Roblox 内置纹理
             BackgroundColor3={Color3.fromRGB(52, 58, 78)} // 作为备用颜色
             BorderSizePixel={0}
             ScaleType={Enum.ScaleType.Stretch} // 图片缩放方式
@@ -119,7 +119,7 @@ export function ExchangeScreen() {
                     <imagelabel
                         Size={new UDim2(0, 50, 0, 50)}
                         Position={new UDim2(0.5, -25, 0.5, -25)}
-                        Image="rbxasset://textures/ui/GuiImagePlaceholder.png" // 可以替换为星形物品图片
+                        Image="rbxasset://textures/ui/TopBar/iconSort.png" // 星形物品纹理
                         BackgroundColor3={Color3.fromRGB(100, 150, 255)}
                         BorderSizePixel={0}
                         ScaleType={Enum.ScaleType.Fit}
