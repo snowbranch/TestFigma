@@ -1,9 +1,8 @@
 import React from "@rbxts/react";
 import { ItemSelection } from "./ItemSelection";
 
-export = {
-    summary: "ItemSelection组件 - 物品选择界面",
-    story: (
+export = () => {
+    return (
         <screengui ResetOnSpawn={false}>
             <ItemSelection
                 onIconSelect={(iconIndex) => {
@@ -14,5 +13,5 @@ export = {
                 }}
             />
         </screengui>
-    ),
+    );
 };
