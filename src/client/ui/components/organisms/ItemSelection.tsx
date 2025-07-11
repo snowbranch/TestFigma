@@ -32,8 +32,27 @@ export function ItemSelection({
             Size={new UDim2(0.3125, 0, 0.4, 0)} // 31.25% × 40% 屏幕占比
             Position={new UDim2(0.5, 0, 0.5, 0)} // 居中
             AnchorPoint={new Vector2(0.5, 0.5)}
-            BackgroundTransparency={1}
+            BackgroundColor3={Color3.fromRGB(45, 45, 50)} // 深灰色背景
+            BorderSizePixel={2}
+            BorderColor3={Color3.fromRGB(80, 80, 85)} // 浅灰色边框
         >
+            <uicorner CornerRadius={new UDim(0, 12)} />
+            
+            {/* 背景渐变效果 */}
+            <frame
+                Size={new UDim2(1, 0, 1, 0)}
+                BackgroundTransparency={1}
+                ZIndex={-1}
+            >
+                <uigradient
+                    Color={new ColorSequence([
+                        new ColorSequenceKeypoint(0, Color3.fromRGB(50, 50, 55)),
+                        new ColorSequenceKeypoint(0.5, Color3.fromRGB(45, 45, 50)),
+                        new ColorSequenceKeypoint(1, Color3.fromRGB(40, 40, 45))
+                    ])}
+                    Rotation={135} // 从左上到右下的对角渐变
+                />
+            </frame>
             {/* 顶部信息区域 - 28.75% × 3.89% 屏幕占比, 位置 (4%, 13.89%) */}
             <frame
                 Size={new UDim2(0.92, 0, 0.0972, 0)} // 相对于父容器：552/600 × 42/432
