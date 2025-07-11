@@ -5,7 +5,7 @@ import { ItemSelection } from "./ItemSelection";
 export = (target: GuiObject) => {
     const root = createRoot(target);
     
-    root.render(
+    const element = (
         <ItemSelection
             onIconSelect={(iconIndex) => {
                 print(`选择了图标: ${iconIndex}`);
@@ -16,7 +16,13 @@ export = (target: GuiObject) => {
         />
     );
     
+    root.render(element);
+    
     return () => {
-        root.unmount();
+        try {
+            root.unmount();
+        } catch (err) {
+            warn("Story cleanup error:", err);
+        }
     };
 };

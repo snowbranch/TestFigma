@@ -1,5 +1,4 @@
 import React, { useState } from "@rbxts/react";
-import { usePx } from "../../hooks/use-px";
 
 interface ItemSelectionProps {
     onIconSelect?: (iconIndex: number | undefined) => void;
@@ -7,7 +6,6 @@ interface ItemSelectionProps {
 }
 
 export function ItemSelection({ onIconSelect, onConfirm }: ItemSelectionProps) {
-    const px = usePx();
     const [selectedIcon, setSelectedIcon] = useState<number | undefined>(undefined);
 
     const handleIconClick = (iconIndex: number) => {
@@ -22,115 +20,167 @@ export function ItemSelection({ onIconSelect, onConfirm }: ItemSelectionProps) {
 
     return (
         <frame
-            Size={new UDim2(0, px(200), 0, px(144))}
-            Position={new UDim2(0.5, px(-100), 0.5, px(-72))}
+            Size={new UDim2(0.3125, 0, 0.4, 0)} // 31.25% × 40% 屏幕占比
+            Position={new UDim2(0.5, 0, 0.5, 0)} // 居中
+            AnchorPoint={new Vector2(0.5, 0.5)}
             BackgroundTransparency={1}
         >
-            {/* 顶部信息区域 - 184px × 14px, 位置 (8px, 20px) */}
+            {/* 顶部信息区域 - 28.75% × 3.89% 屏幕占比, 位置 (4%, 13.89%) */}
             <frame
-                Size={new UDim2(0, px(184), 0, px(14))}
-                Position={new UDim2(0, px(8), 0, px(20))}
+                Size={new UDim2(0.92, 0, 0.0972, 0)} // 相对于父容器：552/600 × 42/432
+                Position={new UDim2(0.04, 0, 0.1389, 0)} // 相对于父容器：24/600 × 60/432
                 BackgroundColor3={Color3.fromRGB(80, 80, 80)}
                 BorderSizePixel={0}
             >
-                <uicorner CornerRadius={new UDim(0, px(2))} />
+                <uicorner CornerRadius={new UDim(0, 6)} />
             </frame>
 
-            {/* 中间图标选择区域 - 92px × 28px, 位置 (8px, 42px) */}
+            {/* 中间图标选择区域 - 14.38% × 7.78% 屏幕占比, 位置 (4%, 29.17%) */}
             <frame
-                Size={new UDim2(0, px(92), 0, px(28))}
-                Position={new UDim2(0, px(8), 0, px(42))}
+                Size={new UDim2(0.46, 0, 0.1944, 0)} // 相对于父容器：276/600 × 84/432
+                Position={new UDim2(0.04, 0, 0.2917, 0)} // 相对于父容器：24/600 × 126/432
                 BackgroundTransparency={1}
             >
-                {/* 左侧图标容器 - 28px × 28px, 位置 (0px, 0px) */}
-                <imagebutton
-                    Size={new UDim2(0, px(28), 0, px(28))}
-                    Position={new UDim2(0, px(0), 0, px(0))}
-                    BackgroundColor3={
-                        selectedIcon === 0 
-                            ? Color3.fromRGB(100, 150, 255) 
-                            : Color3.fromRGB(60, 60, 60)
-                    }
-                    BorderSizePixel={selectedIcon === 0 ? 2 : 1}
-                    BorderColor3={
-                        selectedIcon === 0 
-                            ? Color3.fromRGB(255, 255, 255) 
-                            : Color3.fromRGB(100, 100, 100)
-                    }
-                    Image=""
-                    Event={{
-                        MouseButton1Click: () => handleIconClick(0)
-                    }}
+                {/* 左侧图标容器 - 4.38% × 7.78% 屏幕占比, 位置 (0%, 0%) */}
+                <frame
+                    Size={new UDim2(0.3043, 0, 1, 0)} // 相对于图标区：84/276 × 84/84
+                    Position={new UDim2(0, 0, 0, 0)}
+                    BackgroundTransparency={1}
                 >
-                    <uicorner CornerRadius={new UDim(0, px(4))} />
-                </imagebutton>
+                    {/* 背景矢量 - 作为按钮 */}
+                    <imagebutton
+                        Size={new UDim2(1, 0, 1, 0)}
+                        Position={new UDim2(0, 0, 0, 0)}
+                        BackgroundColor3={
+                            selectedIcon === 0 
+                                ? Color3.fromRGB(100, 150, 255) 
+                                : Color3.fromRGB(60, 60, 60)
+                        }
+                        BorderSizePixel={selectedIcon === 0 ? 6 : 3} // 3倍放大：2*3=6, 1*3=3
+                        BorderColor3={
+                            selectedIcon === 0 
+                                ? Color3.fromRGB(255, 255, 255) 
+                                : Color3.fromRGB(100, 100, 100)
+                        }
+                        Image=""
+                        Event={{
+                            MouseButton1Click: () => handleIconClick(0)
+                        }}
+                    >
+                        <uicorner CornerRadius={new UDim(0, 12)} />
+                        
+                        {/* 前景矢量 - 图标内容 */}
+                        <imagelabel
+                            Size={new UDim2(0.857, 0, 0.714, 0)} // 相对于背景：72/84 × 60/84 (24*3/28*3)
+                            Position={new UDim2(0.0714, 0, 0.0714, 0)} // 相对于背景：6/84 × 6/84 (2*3/28*3)
+                            BackgroundTransparency={1}
+                            Image=""
+                            ImageColor3={Color3.fromRGB(255, 255, 255)}
+                            ScaleType={Enum.ScaleType.Fit}
+                        />
+                    </imagebutton>
+                </frame>
 
-                {/* 中间图标容器 - 28px × 28px, 位置 (32px, 0px) */}
-                <imagebutton
-                    Size={new UDim2(0, px(28), 0, px(28))}
-                    Position={new UDim2(0, px(32), 0, px(0))}
-                    BackgroundColor3={
-                        selectedIcon === 1 
-                            ? Color3.fromRGB(255, 200, 50) 
-                            : Color3.fromRGB(60, 60, 60)
-                    }
-                    BorderSizePixel={selectedIcon === 1 ? 2 : 1}
-                    BorderColor3={
-                        selectedIcon === 1 
-                            ? Color3.fromRGB(255, 255, 255) 
-                            : Color3.fromRGB(100, 100, 100)
-                    }
-                    Image=""
-                    Event={{
-                        MouseButton1Click: () => handleIconClick(1)
-                    }}
+                {/* 中间图标容器 - 4.38% × 7.78% 屏幕占比, 位置 (34.78%, 0%) */}
+                <frame
+                    Size={new UDim2(0.3043, 0, 1, 0)} // 相对于图标区：84/276 × 84/84
+                    Position={new UDim2(0.3478, 0, 0, 0)} // 相对于图标区：96/276
+                    BackgroundTransparency={1}
                 >
-                    <uicorner CornerRadius={new UDim(0, px(4))} />
-                </imagebutton>
+                    {/* 背景矢量 - 作为按钮 */}
+                    <imagebutton
+                        Size={new UDim2(1, 0, 1, 0)}
+                        Position={new UDim2(0, 0, 0, 0)}
+                        BackgroundColor3={
+                            selectedIcon === 1 
+                                ? Color3.fromRGB(255, 200, 50) 
+                                : Color3.fromRGB(60, 60, 60)
+                        }
+                        BorderSizePixel={selectedIcon === 1 ? 6 : 3} // 3倍放大：2*3=6, 1*3=3
+                        BorderColor3={
+                            selectedIcon === 1 
+                                ? Color3.fromRGB(255, 255, 255) 
+                                : Color3.fromRGB(100, 100, 100)
+                        }
+                        Image=""
+                        Event={{
+                            MouseButton1Click: () => handleIconClick(1)
+                        }}
+                    >
+                        <uicorner CornerRadius={new UDim(0, 12)} />
+                        
+                        {/* 前景矢量 - 图标内容 */}
+                        <imagelabel
+                            Size={new UDim2(0.857, 0, 0.714, 0)} // 相对于背景：72/84 × 60/84 (24*3/28*3)
+                            Position={new UDim2(0.0714, 0, 0.0714, 0)} // 相对于背景：6/84 × 6/84 (2*3/28*3)
+                            BackgroundTransparency={1}
+                            Image=""
+                            ImageColor3={Color3.fromRGB(255, 255, 255)}
+                            ScaleType={Enum.ScaleType.Fit}
+                        />
+                    </imagebutton>
+                </frame>
 
-                {/* 右侧图标容器 - 28px × 28px, 位置 (64px, 0px) */}
-                <imagebutton
-                    Size={new UDim2(0, px(28), 0, px(28))}
-                    Position={new UDim2(0, px(64), 0, px(0))}
-                    BackgroundColor3={
-                        selectedIcon === 2 
-                            ? Color3.fromRGB(50, 200, 150) 
-                            : Color3.fromRGB(60, 60, 60)
-                    }
-                    BorderSizePixel={selectedIcon === 2 ? 2 : 1}
-                    BorderColor3={
-                        selectedIcon === 2 
-                            ? Color3.fromRGB(255, 255, 255) 
-                            : Color3.fromRGB(100, 100, 100)
-                    }
-                    Image=""
-                    Event={{
-                        MouseButton1Click: () => handleIconClick(2)
-                    }}
+                {/* 右侧图标容器 - 4.38% × 7.78% 屏幕占比, 位置 (69.57%, 0%) */}
+                <frame
+                    Size={new UDim2(0.3043, 0, 1, 0)} // 相对于图标区：84/276 × 84/84
+                    Position={new UDim2(0.6957, 0, 0, 0)} // 相对于图标区：192/276
+                    BackgroundTransparency={1}
                 >
-                    <uicorner CornerRadius={new UDim(0, px(4))} />
-                </imagebutton>
+                    {/* 背景矢量 - 作为按钮 */}
+                    <imagebutton
+                        Size={new UDim2(1, 0, 1, 0)}
+                        Position={new UDim2(0, 0, 0, 0)}
+                        BackgroundColor3={
+                            selectedIcon === 2 
+                                ? Color3.fromRGB(50, 200, 150) 
+                                : Color3.fromRGB(60, 60, 60)
+                        }
+                        BorderSizePixel={selectedIcon === 2 ? 6 : 3} // 3倍放大：2*3=6, 1*3=3
+                        BorderColor3={
+                            selectedIcon === 2 
+                                ? Color3.fromRGB(255, 255, 255) 
+                                : Color3.fromRGB(100, 100, 100)
+                        }
+                        Image=""
+                        Event={{
+                            MouseButton1Click: () => handleIconClick(2)
+                        }}
+                    >
+                        <uicorner CornerRadius={new UDim(0, 12)} />
+                        
+                        {/* 前景矢量 - 图标内容 */}
+                        <imagelabel
+                            Size={new UDim2(0.857, 0, 0.714, 0)} // 相对于背景：72/84 × 60/84 (24*3/28*3)
+                            Position={new UDim2(0.0714, 0, 0.0714, 0)} // 相对于背景：6/84 × 6/84 (2*3/28*3)
+                            BackgroundTransparency={1}
+                            Image=""
+                            ImageColor3={Color3.fromRGB(255, 255, 255)}
+                            ScaleType={Enum.ScaleType.Fit}
+                        />
+                    </imagebutton>
+                </frame>
             </frame>
 
-            {/* 底部操作按钮区域 - 74px × 20px, 位置 (63px, 117px) */}
+            {/* 底部操作按钮区域 - 11.56% × 5.56% 屏幕占比, 位置 (31.5%, 81.25%) */}
             <frame
-                Size={new UDim2(0, px(74), 0, px(20))}
-                Position={new UDim2(0, px(63), 0, px(117))}
+                Size={new UDim2(0.37, 0, 0.1389, 0)} // 相对于父容器：222/600 × 60/432
+                Position={new UDim2(0.315, 0, 0.8125, 0)} // 相对于父容器：189/600 × 351/432
                 BackgroundTransparency={1}
             >
                 {/* 按钮主体 - 深色背景和边框 */}
                 <frame
                     Size={new UDim2(1, 0, 1, 0)}
                     BackgroundColor3={Color3.fromRGB(24, 19, 30)} // #18131e
-                    BorderSizePixel={1}
+                    BorderSizePixel={3} // 3倍放大：1*3=3
                     BorderColor3={Color3.fromRGB(140, 140, 140)} // #8c8c8c
                 >
-                    <uicorner CornerRadius={new UDim(0, px(2))} />
+                    <uicorner CornerRadius={new UDim(0, 6)} />
                     
-                    {/* 按钮表面层 - 70px × 16px, 位置 (2px, 2px) */}
+                    {/* 按钮表面层 - 10.94% × 4.44% 屏幕占比, 位置 (2.7%, 10%) */}
                     <textbutton
-                        Size={new UDim2(0, px(70), 0, px(16))}
-                        Position={new UDim2(0, px(2), 0, px(2))}
+                        Size={new UDim2(0.946, 0, 0.8, 0)} // 相对于按钮主体：210/222 × 48/60
+                        Position={new UDim2(0.027, 0, 0.1, 0)} // 相对于按钮主体：6/222 × 6/60
                         Text=""
                         BorderSizePixel={0}
                         BackgroundTransparency={1}
@@ -144,7 +194,7 @@ export function ItemSelection({ onIconSelect, onConfirm }: ItemSelectionProps) {
                             BackgroundColor3={Color3.fromRGB(246, 249, 248)} // #f6f9f8
                             BorderSizePixel={0}
                         >
-                            <uicorner CornerRadius={new UDim(0, px(1))} />
+                            <uicorner CornerRadius={new UDim(0, 3)} />
                             <uigradient
                                 Color={new ColorSequence([
                                     new ColorSequenceKeypoint(0, Color3.fromRGB(246, 249, 248)), // #f6f9f8
@@ -160,7 +210,7 @@ export function ItemSelection({ onIconSelect, onConfirm }: ItemSelectionProps) {
                             Size={new UDim2(1, 0, 1, 0)}
                             BackgroundTransparency={1}
                             TextColor3={Color3.fromRGB(50, 50, 50)}
-                            TextSize={px(10)}
+                            TextSize={30} // 3倍放大：10*3=30
                             Font={Enum.Font.GothamMedium}
                             TextXAlignment={Enum.TextXAlignment.Center}
                             TextYAlignment={Enum.TextYAlignment.Center}
@@ -173,11 +223,11 @@ export function ItemSelection({ onIconSelect, onConfirm }: ItemSelectionProps) {
             {selectedIcon !== undefined && (
                 <textlabel
                     Text={`已选中图标 ${selectedIcon + 1}`}
-                    Size={new UDim2(1, 0, 0, px(12))}
-                    Position={new UDim2(0, px(0), 0, px(78))}
+                    Size={new UDim2(1, 0, 0.0833, 0)} // 相对于父容器：36/432 (12*3/432)
+                    Position={new UDim2(0, 0, 0.5417, 0)} // 相对于父容器：234/432 (78*3/432)
                     BackgroundTransparency={1}
                     TextColor3={Color3.fromRGB(150, 255, 150)}
-                    TextSize={px(8)}
+                    TextSize={24} // 3倍放大：8*3=24
                     Font={Enum.Font.Gotham}
                     TextXAlignment={Enum.TextXAlignment.Center}
                     TextYAlignment={Enum.TextYAlignment.Center}
