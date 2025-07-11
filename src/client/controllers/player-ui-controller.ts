@@ -2,7 +2,7 @@ import { Controller, OnStart } from "@flamework/core";
 import { Players } from "@rbxts/services";
 import React from "@rbxts/react";
 import { createRoot } from "@rbxts/react-roblox";
-import { ExchangeScreen } from "../ui/components";
+import { ItemSelection } from "../ui/components";
 
 @Controller()
 export class PlayerUIController implements OnStart {
@@ -35,8 +35,8 @@ export class PlayerUIController implements OnStart {
         // 创建React根节点
         this.uiRoot = createRoot(playerGui);
         
-        // 渲染交换界面
-        this.uiRoot.render(React.createElement(ExchangeScreen));
+        // 渲染物品选择界面
+        this.uiRoot.render(React.createElement(ItemSelection));
         
         print("UI 已初始化并渲染");
     }
