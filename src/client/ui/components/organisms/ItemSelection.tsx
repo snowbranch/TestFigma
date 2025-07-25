@@ -79,12 +79,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
-						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
+						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
+						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
 						BackgroundTransparency={1}
-						Image="rbxassetid://126470244194385"
-						ImageRectOffset={new Vector2(0, 0)}
-						ImageRectSize={new Vector2(64, 64)}
+						Image="rbxassetid://138403587091251"
+						ImageRectOffset={new Vector2(0, 357)}
+						ImageRectSize={new Vector2(48, 40)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 0 && (
@@ -114,12 +114,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
-						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
+						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
+						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
 						BackgroundTransparency={1}
-						Image="rbxassetid://126470244194385"
-						ImageRectOffset={new Vector2(68, 0)}
-						ImageRectSize={new Vector2(64, 64)}
+						Image="rbxassetid://138403587091251"
+						ImageRectOffset={new Vector2(407, 62)}
+						ImageRectSize={new Vector2(48, 40)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 1 && (
@@ -149,12 +149,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
-						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
+						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
+						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
 						BackgroundTransparency={1}
-						Image="rbxassetid://126470244194385"
-						ImageRectOffset={new Vector2(0, 68)}
-						ImageRectSize={new Vector2(64, 64)}
+						Image="rbxassetid://138403587091251"
+						ImageRectOffset={new Vector2(62, 295)}
+						ImageRectSize={new Vector2(48, 40)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 2 && (
