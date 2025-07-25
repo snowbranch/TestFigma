@@ -31,7 +31,9 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				Size={new UDim2(1, 0, 1, 0)}
 				Position={new UDim2(0, 0, 0, 0)}
 				BackgroundTransparency={1}
-				Image="rbxasset://textures/Image/item-selection_Vector_Vector.png"
+				Image="rbxassetid://138403587091251"
+				ImageRectOffset={new Vector2(0, 0)}
+				ImageRectSize={new Vector2(403, 291)}
 				ZIndex={1}
 			/>
 
@@ -62,12 +64,14 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				BackgroundTransparency={1}
 				ZIndex={2}
 			>
-				{/* 第一个图标 */}
+				{/* 第一个图标 - 枇杷 */}
 				<imagebutton
 					Size={new UDim2(0.3043, 0, 1, 0)} // 84/276 × 84/84
 					Position={new UDim2(0, 0, 0, 0)}
 					BackgroundTransparency={1}
-					Image="rbxasset://textures/Image/item-selection_Group1_Group_Vector_Vector.png"
+					Image="rbxassetid://138403587091251"
+					ImageRectOffset={new Vector2(469, 0)}
+					ImageRectSize={new Vector2(58, 58)}
 					Active={!disabled}
 					Event={{
 						MouseButton1Click: () => handleIconClick(0),
@@ -75,10 +79,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
-						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
+						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
+						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
 						BackgroundTransparency={1}
-						Image="rbxasset://textures/Image/item-selection_Group1_Group_Vector_1_Vector_1.png"
+						Image="rbxassetid://126470244194385"
+						ImageRectOffset={new Vector2(0, 0)}
+						ImageRectSize={new Vector2(64, 64)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 0 && (
@@ -93,12 +99,14 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 					)}
 				</imagebutton>
 
-				{/* 第二个图标 */}
+				{/* 第二个图标 - 梨子 */}
 				<imagebutton
 					Size={new UDim2(0.3043, 0, 1, 0)} // 84/276 × 84/84
 					Position={new UDim2(0.348, 0, 0, 0)} // 96/276
 					BackgroundTransparency={1}
-					Image="rbxasset://textures/Image/item-selection_Group1_Group_1_Vector_Vector.png"
+					Image="rbxassetid://138403587091251"
+					ImageRectOffset={new Vector2(407, 0)}
+					ImageRectSize={new Vector2(58, 58)}
 					Active={!disabled}
 					Event={{
 						MouseButton1Click: () => handleIconClick(1),
@@ -106,10 +114,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
-						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
+						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
+						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
 						BackgroundTransparency={1}
-						Image="rbxasset://textures/Image/item-selection_Group1_Group_1_Vector_1_Vector_1.png"
+						Image="rbxassetid://126470244194385"
+						ImageRectOffset={new Vector2(68, 0)}
+						ImageRectSize={new Vector2(64, 64)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 1 && (
@@ -124,12 +134,14 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 					)}
 				</imagebutton>
 
-				{/* 第三个图标 */}
+				{/* 第三个图标 - 芒果 */}
 				<imagebutton
 					Size={new UDim2(0.3043, 0, 1, 0)} // 84/276 × 84/84
 					Position={new UDim2(0.696, 0, 0, 0)} // 192/276
 					BackgroundTransparency={1}
-					Image="rbxasset://textures/Image/item-selection_Group1_Group_2_Vector_Vector.png"
+					Image="rbxassetid://138403587091251"
+					ImageRectOffset={new Vector2(0, 295)}
+					ImageRectSize={new Vector2(58, 58)}
 					Active={!disabled}
 					Event={{
 						MouseButton1Click: () => handleIconClick(2),
@@ -137,10 +149,12 @@ export function ItemSelection({ onIconSelect, onConfirm, disabled = false }: Ite
 				>
 					{/* 图标内容 */}
 					<imagelabel
-						Size={new UDim2(0.857, 0, 0.714, 0)} // 72/84 × 60/84
-						Position={new UDim2(0.071, 0, 0.143, 0)} // 6/84 × 12/84
+						Size={new UDim2(0.75, 0, 0.75, 0)} // 调整大小适配水果图标
+						Position={new UDim2(0.125, 0, 0.125, 0)} // 居中显示
 						BackgroundTransparency={1}
-						Image="rbxasset://textures/Image/item-selection_Group1_Group_2_Vector_1_Vector_1.png"
+						Image="rbxassetid://126470244194385"
+						ImageRectOffset={new Vector2(0, 68)}
+						ImageRectSize={new Vector2(64, 64)}
 					/>
 					{/* 选中状态覆盖 */}
 					{selectedIcon === 2 && (

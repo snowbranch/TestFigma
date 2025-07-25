@@ -1,0 +1,71 @@
+{
+  "FigmaTest": {
+    "item-selection_Vector_Vector": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[0, 0]",
+      "ImageRectSize": "[403, 291]"
+    },
+    "item-selection_Group1_Group_1_Vector_Vector": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[407, 0]",
+      "ImageRectSize": "[58, 58]"
+    },
+    "item-selection_Group1_Group_2_Vector_Vector": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[0, 295]",
+      "ImageRectSize": "[58, 58]"
+    },
+    "item-selection_Group1_Group_Vector_Vector": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[469, 0]",
+      "ImageRectSize": "[58, 58]"
+    },
+    "item-selection_Group1_Group_1_Vector_1_Vector_1": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[407, 62]",
+      "ImageRectSize": "[48, 40]"
+    },
+    "item-selection_Group1_Group_2_Vector_1_Vector_1": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[62, 295]",
+      "ImageRectSize": "[48, 40]"
+    },
+    "item-selection_Group1_Group_Vector_1_Vector_1": {
+      "Image": "rbxassetid://138403587091251",
+      "ImageRectOffset": "[0, 357]",
+      "ImageRectSize": "[48, 40]"
+    }
+  },
+  "icons": {
+    "枇杷": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[0, 0]",
+      "ImageRectSize": "[64, 64]"
+    },
+    "梨子": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[68, 0]",
+      "ImageRectSize": "[64, 64]"
+    },
+    "芒果": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[0, 68]",
+      "ImageRectSize": "[64, 64]"
+    },
+    "苹果": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[136, 0]",
+      "ImageRectSize": "[64, 64]"
+    },
+    "菠萝": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[68, 68]",
+      "ImageRectSize": "[64, 64]"
+    },
+    "香蕉": {
+      "Image": "rbxassetid://126470244194385",
+      "ImageRectOffset": "[0, 136]",
+      "ImageRectSize": "[64, 64]"
+    }
+  }
+}
